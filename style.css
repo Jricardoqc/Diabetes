@@ -1,0 +1,33 @@
+@import url(./CSS/GERAL/Nav.css);
+@import url(./CSS/Section.css);
+@import url(./CSS/GERAL/Footer.css);
+@import url(./CSS/Teste.css);
+@import url(./CSS/EDA.css);
+body{
+  background: rgb(219, 236, 255);
+  margin: 0;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  font-family:Arial, Helvetica, sans-serif;
+  min-height: 100%;
+}
+
+html{
+  height: 100%;
+  min-height: 100%;
+}
+
+h1,h2,p,a,img,span,label{
+  margin: 0;
+  text-decoration: none;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #00142A;
+}
+h2{
+  font-size: 2rem;
+}
+p{
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

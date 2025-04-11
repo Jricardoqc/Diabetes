@@ -1,0 +1,21 @@
+#todos-graficos {
+  display: grid;
+  gap: 15px;
+  justify-items: center;
+  justify-self: center;
+  max-width: 1200px;
+  width: 100%;
+}
+#eda{
+  display: grid;
+  gap: 50px;
+  margin: 5% auto;
+}
+#todos-graficos img {
+  max-width: 60%;
+}
+@media (max-width: 1400px) {
+  #todos-graficos {
+    width: 80%;
+  }
+}

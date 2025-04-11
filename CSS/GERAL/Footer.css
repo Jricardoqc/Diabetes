@@ -1,0 +1,20 @@
+footer{
+  background: rgb(241, 248, 255);
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+  margin-top: auto;
+}
+
+footer p{
+  color: #00142A;
+  text-align: center;
+  font-size: small;
+}
+
+@media (max-width:1400px){
+
+}

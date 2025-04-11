@@ -1,0 +1,38 @@
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background: #00142A;
+  padding-left: 20px;
+  gap: 20px;
+  align-items: center;
+  height: 65px;
+  z-index: 1000;
+}
+
+nav a{
+  color: rgb(219, 236, 255);
+  font-weight: bold;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav .sem-linha::after{
+  display: none;
+}
