@@ -23,7 +23,7 @@ function enviarFormulario() {
     blood_glucose_level: Number(document.getElementById("glicose").value)
   };
 
-  fetch("https://diabetes-jp84.onrender.com/HTML/Teste.html", {
+  fetch("https://diabetes-jp84.onrender.com/predict", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(dados)
