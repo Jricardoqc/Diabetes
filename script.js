@@ -42,3 +42,25 @@ function enviarFormulario() {
       alert("Erro: " + (err.error || "Erro ao enviar dados"));
     });
 }
+
+const openBtn = document.getElementById('openPopup');
+const closeBtn = document.getElementById('closePopup');
+const popup = document.getElementById('popup');
+
+openBtn.addEventListener('click', () => {
+  popup.classList.remove('popup-hidden');
+  popup.classList.add('popup-visible');
+});
+
+closeBtn.addEventListener('click', () => {
+  popup.classList.remove('popup-visible');
+  popup.classList.add('popup-hidden');
+});
+
+// Fecha o pop-up se clicar fora do conteúdo
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.classList.remove('popup-visible');
+    popup.classList.add('popup-hidden');
+  }
+});

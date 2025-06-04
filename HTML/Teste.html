@@ -127,7 +127,14 @@
         <input type="number" id="glicose" name="glicose" required>
       </div>
 
-      <button onclick="enviarFormulario()" type="submit">Enviar</button>
+      <button id="openPopup" onclick="enviarFormulario()" type="submit">Enviar</button>
+    </div>
+
+    <div id="popup" class="popup-hidden">
+      <div class="popup-content">
+        <span id="closePopup" class="close-button">&times;</span>
+        <p id="popupMessage"></p>
+      </div>
     </div>
   </section>
 

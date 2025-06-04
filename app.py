@@ -7,7 +7,7 @@ import os
 import requests
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Verifica e baixa modelo
 MODEL_URL = 'https://drive.google.com/uc?export=download&id=1lHrpHHaMvT0gwGQ6sdJv55-8_HqlKio6'
