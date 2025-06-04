@@ -36,17 +36,17 @@
         <label for="genero"> <span class="numero">1</span> Qual seu gênero?</label>
         <div class="radio-group">
           <label class="radio-option">
-            <input type="radio" name="genero" value="homem" required>
+            <input type="radio" name="genero" value="Male" required>
             <span class="custom-radio"></span>
             Homem
           </label>
           <label class="radio-option">
-            <input type="radio" name="genero" value="mulher">
+            <input type="radio" name="genero" value="Female">
             <span class="custom-radio"></span>
             Mulher
           </label>
           <label class="radio-option">
-            <input type="radio" name="genero" value="outro">
+            <input type="radio" name="genero" value="Other">
             <span class="custom-radio"></span>
             Outro
           </label>
@@ -62,12 +62,12 @@
         <label><span class="numero">3</span> Você tem hipertensão?</label>
         <div class="radio-group">
           <label class="radio-option">
-            <input type="radio" name="hipertensao" value="sim" required>
+            <input type="radio" name="hipertensao" value="1">
             <span class="custom-radio"></span>
             Sim
           </label>
           <label class="radio-option">
-            <input type="radio" name="hipertensao" value="nao">
+            <input type="radio" name="hipertensao" value="0">
             <span class="custom-radio"></span>
             Não
           </label>
@@ -78,42 +78,52 @@
         <label><span class="numero">4</span> Você tem doença do coração?</label>
         <div class="radio-group">
           <label class="radio-option">
-            <input type="radio" name="coracao" value="sim" required>
+            <input type="radio" name="coracao" value="1">
             <span class="custom-radio"></span>
             Sim
           </label>
           <label class="radio-option">
-            <input type="radio" name="coracao" value="nao">
+            <input type="radio" name="coracao" value="0">
             <span class="custom-radio"></span>
             Não
           </label>
         </div>
       </div>
 
+
       <div class="pergunta">
-        <label><span class="numero">5</span>Você fuma?</label>
+        <label for="fuma"><span class="numero">5</span>Você fuma?</label>
         <div class="radio-group">
           <label class="radio-option">
-            <input type="radio" name="fuma" value="sim" required>
+            <input type="radio" name="fuma" value="never" required>
             <span class="custom-radio"></span>
-            Sim
+            Nunca
           </label>
-
           <label class="radio-option">
-            <input type="radio" name="fuma" value="nao">
+            <input type="radio" name="fuma" value="current">
             <span class="custom-radio"></span>
-            Não
+            Atualmente
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="fuma" value="former">
+            <span class="custom-radio"></span>
+            Ex-fumante
           </label>
         </div>
       </div>
 
       <div class="pergunta">
-        <label for="imc"><span class="numero">6</span> Qual seu IMC?</label>
+        <label for="hba1c"><span class="numero">6</span> Qual seu nível de HbA1c?</label>
+        <input type="number" id="hba1c" name="hba1c" step="0.1" required>
+      </div>
+
+      <div class="pergunta">
+        <label for="imc"><span class="numero">7</span> Qual seu IMC?</label>
         <input type="number" id="imc" name="imc" step="0.1" required>
       </div>
 
       <div class="pergunta">
-        <label for="glicose"><span class="numero">7</span> Qual seu índice de glicose no sangue (mg/dL)?</label>
+        <label for="glicose"><span class="numero">8</span> Qual seu índice de glicose no sangue (mg/dL)?</label>
         <input type="number" id="glicose" name="glicose" required>
       </div>
 

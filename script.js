@@ -13,34 +13,32 @@ botao.forEach((botao) => {
 });
 function enviarFormulario() {
   const dados = {
+    gender: document.querySelector('input[name="genero"]:checked').value,
     age: Number(document.getElementById("idade").value),
+    hypertension: Number(document.querySelector('input[name="hipertensao"]:checked').value),
+    heart_disease: Number(document.querySelector('input[name="coracao"]:checked').value),
+    smoking_history: document.querySelector('input[name="fuma"]:checked').value,
     bmi: Number(document.getElementById("imc").value),
-    blood_glucose_level: Number(document.getElementById("glicose").value),
-    gender: Number(
-      document.querySelector('input[name="genero"]:checked').value
-    ),
-    hypertension: Number(
-      document.querySelector('input[name="hipertensao"]:checked').value
-    ),
-    heart_disease: Number(
-      document.querySelector('input[name="coracao"]:checked').value
-    ),
-    smoking_history: Number(
-      document.querySelector('input[name="fuma"]:checked').value
-    ),
+    HbA1c_level: Number(document.getElementById("hba1c").value),
+    blood_glucose_level: Number(document.getElementById("glicose").value)
   };
 
-  fetch("http://localhost:5000/prever", {
+  fetch("http://127.0.0.1:5000/predict", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(dados),
+    body: JSON.stringify(dados)
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        return res.json().then(err => { throw err; });
+      }
+      return res.json();
+    })
     .then((data) => {
-      const resultado =
-        data.resultado === 1
-          ? "Alto risco de diabetes"
-          : "Baixo risco de diabetes";
-      alert("Resultado: " + resultado);
+      alert("Resultado: " + data.diabetes);
+    })
+    .catch((err) => {
+      console.error("Erro na requisição:", err);
+      alert("Erro: " + (err.error || "Erro ao enviar dados"));
     });
 }
