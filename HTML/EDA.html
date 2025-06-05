@@ -31,20 +31,41 @@
         “Knowing your data is the first step to making good decisions with it.”
       </p>
     </div>
-    <div id="todos-graficos">
-      <img src="../IMG/heatmap.png" alt="">
-      <img src="../IMG/diabeticos.png" alt="">
-      <img src="../IMG/distribuição de genero.png" alt="">
-      <img src="../IMG/boxplot.png" alt="">
-      <img src="../IMG/faixa etaria.png" alt="">
+
+    <div id="carrossel-graficos" class="carrossel">
+      <div class="slide ativo">
+        <img src="../IMG/heatmap.png" alt="Heatmap de Correlação">
+        <p class="insight">The heatmap shows strong correlations between glucose, BMI and age with the occurrence of diabetes.</p>
+      </div>
+      <div class="slide">
+        <img src="../IMG/diabeticos.png" alt="Distribuição de Diabéticos">
+        <p class="insight">Most of the data belongs to non-diabetic patients, indicating an unbalanced dataset.</p>
+      </div>
+      <div class="slide">
+        <img src="../IMG/distribuição de genero.png" alt="Distribuição por Gênero">
+        <p class="insight">The gender distribution is relatively balanced, useful for comparative risk analysis.</p>
+      </div>
+      <div class="slide">
+        <img src="../IMG/boxplot.png" alt="Boxplot de Variáveis">
+        <p class="insight">The boxplot highlights extreme BMI and glucose values, indicating possible outliers.</p>
+      </div>
+      <div class="slide">
+        <img src="../IMG/faixa etaria.png" alt="Distribuição por Faixa Etária">
+        <p class="insight">People between 40 and 60 years old represent the most affected group, according to the data.</p>
+      </div>
+
+      <!-- Botões laterais -->
+      <button class="btn-esquerda controle" id="anterior">❮</button>
+      <button class="btn-direita controle" id="proximo">❯</button>
     </div>
+    
   </section>
   <footer>
     <p>Based on analyses of the Diabetes Prediction Dataset.</p>
     <p>Academic project for awareness and prevention of type 2 diabetes.</p>
     <p>© 2025 – All rights reserved.</p>
   </footer>
+  <script type="module" src="../script.js"></script>
 </body>
-<script type="module" src="./script.js"></script>
 
 </html>
