@@ -20,114 +20,113 @@
   </header>
   <section id="teste">
     <div id="intro-form">
-      <h2>Qual meu risco de desenvolver diabetes?</h2>
-
-      <p>Esta calculadora de risco de diabetes é baseada em um questionário simples e já validado para este objetivo</p>
-
-      <p>Inserindo alguns dados clínicos e sociodemográficos básicos, esta ferramenta permitirá que você saiba se está em um grupo de alto risco de desenvolver diabetes tipo 2 nos próximos 10 anos e se é recomendado já procurar auxílio médico e fazer o exame de sangue para checar sua glicemia (glicose no sangue).</p>
-
-      <p>Ao final, você saberá também sobre quais hábitos de vida saudáveis comprovadamente, previnem ou postergam o aparecimento de diabetes!</p>
-      <p>Os dados inseridos neste formulário serão armazenados e utilizados para estudos.</p>
+      <h2>What is My Risk of Developing Diabetes?</h2>
+      <p>This diabetes risk calculator is based on a simple and validated questionnaire for this purpose.</p>
+      <p>
+        By entering some basic clinical and sociodemographic information, this tool will let you know if you are at high risk of developing type 2 diabetes in the next 10 years and whether it is recommended to seek medical advice and take a blood glucose test.
+      </p>
+      <p>You will also learn which healthy lifestyle habits have been scientifically proven to prevent or delay the onset of diabetes!</p>
+      <p>The data entered in this form will be stored and used for studies.</p>
     </div>
 
     <div id="questionario">
 
       <div class="pergunta">
-        <label for="genero"> <span class="numero">1</span> Qual seu gênero?</label>
+        <label for="genero"> <span class="numero">1</span> What is your gender?</label>
         <div class="radio-group">
           <label class="radio-option">
             <input type="radio" name="genero" value="Male" required>
             <span class="custom-radio"></span>
-            Homem
+            Man
           </label>
           <label class="radio-option">
             <input type="radio" name="genero" value="Female">
             <span class="custom-radio"></span>
-            Mulher
+            Woman
           </label>
           <label class="radio-option">
             <input type="radio" name="genero" value="Other">
             <span class="custom-radio"></span>
-            Outro
+            Other
           </label>
         </div>
       </div>
 
       <div class="pergunta">
-        <label for="idade"><span class="numero">2</span> Qual sua idade?</label>
+        <label for="idade"><span class="numero">2</span> What is your age?</label>
         <input type="number" id="idade" name="idade" required>
       </div>
 
       <div class="pergunta">
-        <label><span class="numero">3</span> Você tem hipertensão?</label>
+        <label><span class="numero">3</span> Do you have hypertension?</label>
         <div class="radio-group">
           <label class="radio-option">
             <input type="radio" name="hipertensao" value="1">
             <span class="custom-radio"></span>
-            Sim
+            Yes
           </label>
           <label class="radio-option">
             <input type="radio" name="hipertensao" value="0">
             <span class="custom-radio"></span>
-            Não
+            No
           </label>
         </div>
       </div>
 
       <div class="pergunta">
-        <label><span class="numero">4</span> Você tem doença do coração?</label>
+        <label><span class="numero">4</span> Do you have heart disease?</label>
         <div class="radio-group">
           <label class="radio-option">
             <input type="radio" name="coracao" value="1">
             <span class="custom-radio"></span>
-            Sim
+            Yes
           </label>
           <label class="radio-option">
             <input type="radio" name="coracao" value="0">
             <span class="custom-radio"></span>
-            Não
+            No
           </label>
         </div>
       </div>
 
 
       <div class="pergunta">
-        <label for="fuma"><span class="numero">5</span>Você fuma?</label>
+        <label for="fuma"><span class="numero">5</span> Do you smoke?</label>
         <div class="radio-group">
           <label class="radio-option">
             <input type="radio" name="fuma" value="never" required>
             <span class="custom-radio"></span>
-            Nunca
+            Never
           </label>
           <label class="radio-option">
             <input type="radio" name="fuma" value="current">
             <span class="custom-radio"></span>
-            Atualmente
+            Currently
           </label>
           <label class="radio-option">
             <input type="radio" name="fuma" value="former">
             <span class="custom-radio"></span>
-            Ex-fumante
+            Former-Smoker
           </label>
         </div>
       </div>
 
       <div class="pergunta">
-        <label for="hba1c"><span class="numero">6</span> Qual seu nível de HbA1c?</label>
+        <label for="hba1c"><span class="numero">6</span> What is your HbA1c level?</label>
         <input type="number" id="hba1c" name="hba1c" step="0.1" required>
       </div>
 
       <div class="pergunta">
-        <label for="imc"><span class="numero">7</span> Qual seu IMC?</label>
+        <label for="imc"><span class="numero">7</span> What is your BMI?</label>
         <input type="number" id="imc" name="imc" step="0.1" required>
       </div>
 
       <div class="pergunta">
-        <label for="glicose"><span class="numero">8</span> Qual seu índice de glicose no sangue (mg/dL)?</label>
+        <label for="glicose"><span class="numero">8</span> What is your blood glucose level (mg/dL)?</label>
         <input type="number" id="glicose" name="glicose" required>
       </div>
 
-      <button id="openPopup" onclick="enviarFormulario()" type="submit">Enviar</button>
+      <button id="openPopup" onclick="enviarFormulario()" type="submit">Submit</button>
     </div>
 
     <div id="popup" class="popup-hidden">
@@ -139,15 +138,9 @@
   </section>
 
   <footer>
-    <p>
-      Baseado em análises do Diabetes Prediction Dataset.
-    </p>
-    <p>
-      Projeto acadêmico de conscientização e prevenção ao diabetes tipo 2.
-    </p>
-    <p>
-      © 2025 – Todos os direitos reservados.
-    </p>
+    <p>Based on analyses of the Diabetes Prediction Dataset.</p>
+    <p>Academic project for awareness and prevention of type 2 diabetes.</p>
+    <p>© 2025 – All rights reserved.</p>
   </footer>
   <script src="../script.js"></script>
 </body>
