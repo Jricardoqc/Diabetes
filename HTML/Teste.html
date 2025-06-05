@@ -113,17 +113,36 @@
 
       <div class="pergunta">
         <label for="hba1c"><span class="numero">6</span> What is your HbA1c level?</label>
-        <input type="number" id="hba1c" name="hba1c" step="0.1" required>
+        <input type="number" id="hba1c" placeholder="Ex: 7" name="hba1c" step="0.1" required>
       </div>
 
       <div class="pergunta">
         <label for="imc"><span class="numero">7</span> What is your BMI?</label>
-        <input type="number" id="imc" name="imc" step="0.1" required>
+        <input type="number" id="imc" placeholder="Ex: 24.69" name="imc" step="0.1" required>
+        <button id="abrirCalculadora">Open BMI Calculator</button>
+      </div>
+
+      <div id="modalIMC" class="modal">
+        <div class="modal-conteudo">
+          <div id="cabecalho-modal">
+            <h2>BMI Calculator</h2>
+            <span class="fechar" id="fecharModal">&times;</span>
+          </div>
+          <label for="peso">Weight (kg):</label>
+          <input type="number" id="peso" placeholder="Ex: 80" step="any">
+
+          <label for="altura">Height (m):</label>
+          <input type="number" id="altura" placeholder="Ex: 1.80" step="any">
+
+          <button onclick="calcularIMC()">Calculate BMI</button>
+
+          <p id="resultado-imc"></p>
+        </div>
       </div>
 
       <div class="pergunta">
         <label for="glicose"><span class="numero">8</span> What is your blood glucose level (mg/dL)?</label>
-        <input type="number" id="glicose" name="glicose" required>
+        <input type="number" id="glicose" placeholder="Ex: 95" name="glicose" required>
       </div>
 
       <button id="openPopup" onclick="enviarFormulario()" type="submit">Submit</button>
