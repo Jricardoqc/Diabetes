@@ -1,3 +1,26 @@
+document.addEventListener("DOMContentLoaded", () => {
+  let slideAtual = 0;
+  const slides = document.querySelectorAll(".slide");
+  const anteriorBtn = document.getElementById("anterior");
+  const proximoBtn = document.getElementById("proximo");
+
+  function mostrarSlide(index) {
+    slides.forEach(slide => slide.classList.remove("ativo"));
+    slideAtual = (index + slides.length) % slides.length;
+    slides[slideAtual].classList.add("ativo");
+  }
+
+  anteriorBtn.addEventListener("click", () => {
+    mostrarSlide(slideAtual - 1);
+  });
+
+  proximoBtn.addEventListener("click", () => {
+    mostrarSlide(slideAtual + 1);
+  });
+
+  mostrarSlide(slideAtual);
+});
+
 const botao = document.querySelectorAll(".botao");
 
 botao.forEach((botao) => {
