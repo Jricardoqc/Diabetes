@@ -20,6 +20,7 @@ le_smoking = joblib.load('encoder_smoking.pkl')
 def predict():
     try:
         data = request.json
+        print(data)
 
         expected_fields = [
             'gender', 'age', 'hypertension', 'heart_disease',
