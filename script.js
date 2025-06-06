@@ -55,21 +55,32 @@ function enviarFormulario() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(dados),
   })
-    .then((res) => {
-      if (!res.ok) {
-        return res.json().then((err) => {
-          throw err;
-        });
-      }
-      return res.json();
-    })
-    .then((data) => {
-      alert("Resultado: " + data.diabetes);
-    })
-    .catch((err) => {
-      console.error("Erro na requisição:", err);
-      alert("Erro: " + (err.error || "Erro ao enviar dados"));
-    });
+  .then(res => {
+  console.log("Status:", res.status);
+  return res.json();  // aqui dá erro se a resposta não for JSON válido
+})
+.then(data => {
+  console.log("Resposta da API:", data);
+  // exibe o resultado na tela
+})
+.catch(error => {
+  console.error("Erro na requisição:", error);
+});
+    // .then((res) => {
+    //   if (!res.ok) {
+    //     return res.json().then((err) => {
+    //       throw err;
+    //     });
+    //   }
+    //   return res.json();
+    // })
+    // .then((data) => {
+    //   alert("Resultado: " + data.diabetes);
+    // })
+    // .catch((err) => {
+    //   console.error("Erro na requisição:", err);
+    //   alert("Erro: " + (err.error || "Erro ao enviar dados"));
+    // });
 }
 
 const abrirBtn = document.getElementById("abrirCalculadora");
