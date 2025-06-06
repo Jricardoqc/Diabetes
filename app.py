@@ -16,7 +16,7 @@ modelo = joblib.load(MODEL_PATH)
 le_gender = joblib.load('encoder_gender.pkl')
 le_smoking = joblib.load('encoder_smoking.pkl')
 
-@app.route('/predict', methods=['POST'])
+@app.route('https://diabetes-4hkb.onrender.com/predict', methods=['POST'])
 def predict():
     try:
         data = request.get__json()
