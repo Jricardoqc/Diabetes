@@ -19,8 +19,8 @@ le_smoking = joblib.load('encoder_smoking.pkl')
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
-        data = request.json
-        print(data)
+        data = request.get__json()
+        print("📥 Dados recebidos:", data)
 
         expected_fields = [
             'gender', 'age', 'hypertension', 'heart_disease',
@@ -41,18 +41,21 @@ def predict():
         except ValueError:
             return jsonify({'error': f"Valor inválido para 'smoking_history': {data['smoking_history']}. Valores aceitos: {list(le_smoking.classes_)}"}), 400
 
-        input_data = pd.DataFrame([{
-            'gender': gender,
-            'age': float(data['age']),
-            'hypertension': int(data['hypertension']),
-            'heart_disease': int(data['heart_disease']),
-            'smoking_history': smoking_history,
-            'bmi': float(data['bmi']),
-            'HbA1c_level': float(data['HbA1c_level']),
-            'blood_glucose_level': float(data['blood_glucose_level'])
-        }])
+        entrada = np.array([[
+            int(data["gender"]),
+            float(data["age"]),
+            int(data["hypertension"]),
+            int(data["heart_disease"]),
+            int(data["smoking_history"]),
+            float(data["bmi"]),
+            float(data["HbA1c_level"]),
+            float(data["blood_glucose_level"])
+        ]])
 
-        prediction = modelo.predict(input_data)[0]
+        print("✅ Entrada formatada:", entrada)
+
+        prediction = modelo.predict(entrada)[0]
+        print("🧠 Resultado:", prediction)
 
         return jsonify({
             'prediction': int(prediction),
@@ -60,6 +63,7 @@ def predict():
         })
 
     except Exception as e:
+        print("❌ Erro:", str(e))  # Log completo do erro
         return jsonify({'error': f"Ocorreu um erro interno: {str(e)}"}), 500
 
 if __name__ == '__main__':
