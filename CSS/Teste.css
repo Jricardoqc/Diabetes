@@ -167,45 +167,6 @@ textarea:focus, input:focus {
   color: #00142a;
 }
 
-.popup-hidden {
-  display: none;
-}
-
-/* Pop-up visível */
-.popup-visible {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* sombra escura */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Conteúdo do pop-up */
-.popup-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  position: relative;
-  width: 300px;
-  text-align: center;
-}
-
-/* Botão fechar */
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 24px;
-  font-weight: bold;
-}
-
 /* Hover */
 .radio-option:hover .custom-radio {
   border-color: #2980b9;
