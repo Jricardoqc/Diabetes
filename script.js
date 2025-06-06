@@ -1,3 +1,39 @@
+function enviarFormulario() {
+  const dados = {
+    gender: document.querySelector('input[name="genero"]:checked').value,
+    age: Number(document.getElementById("idade").value),
+    hypertension: Number(
+      document.querySelector('input[name="hipertensao"]:checked').value
+    ),
+    heart_disease: Number(
+      document.querySelector('input[name="coracao"]:checked').value
+    ),
+    smoking_history: document.querySelector('input[name="fuma"]:checked').value,
+    bmi: Number(document.getElementById("imc").value),
+    HbA1c_level: Number(document.getElementById("hba1c").value),
+    blood_glucose_level: Number(document.getElementById("glicose").value),
+  };
+
+  fetch("http://127.0.0.1:5000/predict", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dados),
+  })
+    .then(async (res) => {
+      const texto = await res.text(); // pega o corpo como texto cru
+
+      if (!texto) {
+        throw new Error("Resposta vazia da API");
+      }
+
+      const data = JSON.parse(texto);
+      console.log("Resposta da API:", data);
+      alert("Diagnóstico: " + data.diabetes);
+    })
+    .catch((error) => {
+      console.error("Erro na requisição:", error);
+    });
+}
 document.addEventListener("DOMContentLoaded", () => {
   let slideAtual = 0;
   const slides = document.querySelectorAll(".slide");
@@ -34,42 +70,6 @@ botao.forEach((botao) => {
     botao.style.transform = "scale(1)";
   });
 });
-function enviarFormulario() {
-  const dados = {
-    gender: document.querySelector('input[name="genero"]:checked').value,
-    age: Number(document.getElementById("idade").value),
-    hypertension: Number(
-      document.querySelector('input[name="hipertensao"]:checked').value
-    ),
-    heart_disease: Number(
-      document.querySelector('input[name="coracao"]:checked').value
-    ),
-    smoking_history: document.querySelector('input[name="fuma"]:checked').value,
-    bmi: Number(document.getElementById("imc").value),
-    HbA1c_level: Number(document.getElementById("hba1c").value),
-    blood_glucose_level: Number(document.getElementById("glicose").value),
-  };
-
-  fetch("https://diabetes-4hkb.onrender.com/predict", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(dados),
-  })
-    .then(async (res) => {
-      const texto = await res.text(); // pega o corpo como texto cru
-
-      if (!texto) {
-        throw new Error("Resposta vazia da API");
-      }
-
-      const data = JSON.parse(texto);
-      console.log("Resposta da API:", data);
-      alert("Diagnóstico: " + data.diabetes);
-    })
-    .catch((error) => {
-      console.error("Erro na requisição:", error);
-    });
-}
 
 const abrirBtn = document.getElementById("abrirCalculadora");
 const modal = document.getElementById("modalIMC");
@@ -114,25 +114,3 @@ function calcularIMC() {
     "resultado-imc"
   ).textContent = `Your BMI is ${imc.toFixed(2)} (${classificacao})`;
 }
-
-const openBtn = document.getElementById("openPopup");
-const closeBtn = document.getElementById("closePopup");
-const popup = document.getElementById("popup");
-
-openBtn.addEventListener("click", () => {
-  popup.classList.remove("popup-hidden");
-  popup.classList.add("popup-visible");
-});
-
-closeBtn.addEventListener("click", () => {
-  popup.classList.remove("popup-visible");
-  popup.classList.add("popup-hidden");
-});
-
-// Fecha o pop-up se clicar fora do conteúdo
-popup.addEventListener("click", (e) => {
-  if (e.target === popup) {
-    popup.classList.remove("popup-visible");
-    popup.classList.add("popup-hidden");
-  }
-});
