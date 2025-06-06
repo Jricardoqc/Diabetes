@@ -51,21 +51,21 @@
 /* Botões laterais */
 .controle {
   position: absolute;
-  top: 45%;
-  justify-content: center;
+  top: 40%;
   color: white;
   border: none;
   font-size: 20px;
-  padding: 6px 15px;
+  padding: 10px 18px;
+  padding-bottom: 13px;
   border-radius: 100%;
   cursor: pointer;
   z-index: 10;
 }
 
 .btn-esquerda {
-  left: -10%;
+  left: -100px;
 }
 
 .btn-direita {
-  right: -10%;
+  right: -100px;
 }
