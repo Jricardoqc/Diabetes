@@ -9,15 +9,7 @@ import requests
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-# Verifica e baixa modelo
-MODEL_URL = 'https://drive.google.com/uc?export=download&id=1lHrpHHaMvT0gwGQ6sdJv55-8_HqlKio6'
-MODEL_PATH = 'modelo_final.pkl'
-
-if not os.path.exists(MODEL_PATH):
-    print("Baixando modelo_final.pkl...")
-    r = requests.get(MODEL_URL)
-    with open(MODEL_PATH, 'wb') as f:
-        f.write(r.content)
+MODEL_PATH = 'modelo_final_comprimido.pkl'
 
 # Carregar modelo e encoders
 modelo = joblib.load(MODEL_PATH)
