@@ -8,42 +8,35 @@
 }
 #eda{
   display: grid;
+  justify-items: center;
   gap: 50px;
   margin: 5% auto;
 }
 #todos-graficos img {
   max-width: 60%;
 }
-@media (max-width: 1400px) {
-  #todos-graficos {
-    width: 80%;
-  }
-}
-
 .carrossel {
   position: relative;
-  max-width: 70%;
+  width: 70%;
   margin: auto;
   text-align: center;
 }
-
 .slide {
   display: none;
 }
-
 .slide.ativo {
   display: block;
+  justify-items: center;
 }
-
 .slide img {
   max-width: 100%;
-  
   border-radius: 10px;
   box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.2);
 }
 
 .insight {
   font-style: italic;
+  width: 80%;
   font-size: 1.1rem;
   margin-top: 10px;
 }
@@ -68,4 +61,10 @@
 
 .btn-direita {
   right: -100px;
+}
+
+@media (max-width: 1400px) {
+  #todos-graficos {
+    width: 80%;
+  }
 }
