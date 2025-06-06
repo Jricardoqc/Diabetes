@@ -16,12 +16,10 @@ modelo = joblib.load(MODEL_PATH)
 le_gender = joblib.load('encoder_gender.pkl')
 le_smoking = joblib.load('encoder_smoking.pkl')
 
-@app.route('https://diabetes-4hkb.onrender.com/predict', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     try:
-        data = request.get__json()
-        print("📥 Dados recebidos:", data)
-
+        data = request.get_json
         expected_fields = [
             'gender', 'age', 'hypertension', 'heart_disease',
             'smoking_history', 'bmi', 'HbA1c_level', 'blood_glucose_level'
@@ -42,11 +40,11 @@ def predict():
             return jsonify({'error': f"Valor inválido para 'smoking_history': {data['smoking_history']}. Valores aceitos: {list(le_smoking.classes_)}"}), 400
 
         entrada = np.array([[
-            int(data["gender"]),
+            gender,  # já codificado com o encoder
             float(data["age"]),
             int(data["hypertension"]),
             int(data["heart_disease"]),
-            int(data["smoking_history"]),
+            smoking_history,  # já codificado com o encoder
             float(data["bmi"]),
             float(data["HbA1c_level"]),
             float(data["blood_glucose_level"])
