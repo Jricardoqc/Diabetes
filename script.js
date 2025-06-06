@@ -69,21 +69,6 @@ function enviarFormulario() {
     .catch((error) => {
       console.error("Erro na requisição:", error);
     });
-  // .then((res) => {
-  //   if (!res.ok) {
-  //     return res.json().then((err) => {
-  //       throw err;
-  //     });
-  //   }
-  //   return res.json();
-  // })
-  // .then((data) => {
-  //   alert("Resultado: " + data.diabetes);
-  // })
-  // .catch((err) => {
-  //   console.error("Erro na requisição:", err);
-  //   alert("Erro: " + (err.error || "Erro ao enviar dados"));
-  // });
 }
 
 const abrirBtn = document.getElementById("abrirCalculadora");
